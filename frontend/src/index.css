@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 230 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 12%;
+
+    --primary: 245 58% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 230 25% 12%;
+
+    --muted: 220 16% 93%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 263 70% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 90%;
+    --input: 220 16% 90%;
+    --ring: 245 58% 51%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart tokens */
+    --chart-grid: 220 16% 90%;
+    --chart-text: 220 10% 46%;
+
+    --sidebar-background: 245 40% 16%;
+    --sidebar-foreground: 220 20% 85%;
+    --sidebar-primary: 245 58% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 245 30% 22%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 245 20% 24%;
+    --sidebar-ring: 245 58% 51%;
+
+    --shadow-card: 0 1px 3px 0 hsl(220 20% 12% / 0.06), 0 1px 2px -1px hsl(220 20% 12% / 0.06);
+    --shadow-elevated: 0 10px 25px -5px hsl(220 20% 12% / 0.08), 0 8px 10px -6px hsl(220 20% 12% / 0.04);
+  }
+
+  .dark {
+    --background: 230 20% 10%;
+    --foreground: 220 20% 92%;
+
+    --card: 230 18% 14%;
+    --card-foreground: 220 20% 92%;
+
+    --popover: 230 18% 14%;
+    --popover-foreground: 220 20% 92%;
+
+    --primary: 245 58% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 230 16% 20%;
+    --secondary-foreground: 220 20% 92%;
+
+    --muted: 230 14% 18%;
+    --muted-foreground: 220 10% 56%;
+
+    --accent: 263 70% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 14% 22%;
+    --input: 230 14% 22%;
+    --ring: 245 58% 60%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart tokens – dark */
+    --chart-grid: 230 14% 24%;
+    --chart-text: 220 10% 56%;
+
+    --sidebar-background: 230 22% 8%;
+    --sidebar-foreground: 220 20% 75%;
+    --sidebar-primary: 245 58% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 230 18% 14%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 230 14% 16%;
+    --sidebar-ring: 245 58% 60%;
+
+    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.2), 0 1px 2px -1px hsl(0 0% 0% / 0.2);
+    --shadow-elevated: 0 10px 25px -5px hsl(0 0% 0% / 0.3), 0 8px 10px -6px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .card-elevated {
+    @apply bg-card rounded-xl border border-border transition-shadow duration-200;
+    box-shadow: var(--shadow-card);
+  }
+  .card-elevated:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Reusable modal backdrop */
+  .modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-foreground/30 backdrop-blur-sm;
+    animation: backdrop-in 0.2s ease-out;
+  }
+  .modal-panel {
+    @apply w-full card-elevated p-6 animate-slide-up;
+  }
+
+  /* Reusable input style */
+  .input-field {
+    @apply w-full rounded-lg border border-input bg-background px-3 py-2 text-sm outline-none ring-ring focus:ring-2 transition-shadow;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply rounded-lg border border-border px-4 py-2 text-sm font-medium hover:bg-secondary transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
