@@ -2,16 +2,16 @@ import api from './api';
 import type { MenuItem } from '@/types';
 
 const demoMenu: MenuItem[] = [
-  { id: '1', name: 'Butter Chicken', description: 'Creamy tomato-based curry with tender chicken', price: 300, category: 'Main Course', preparationTime: 25, available: true, tags: ['popular', 'non-veg'] },
-  { id: '2', name: 'Paneer Tikka', description: 'Grilled cottage cheese with spices', price: 200, category: 'Starters', preparationTime: 15, available: true, tags: ['popular', 'veg'] },
-  { id: '3', name: 'Chicken Biryani', description: 'Fragrant basmati rice with spiced chicken', price: 280, category: 'Main Course', preparationTime: 30, available: true, tags: ['popular', 'non-veg'] },
-  { id: '4', name: 'Gulab Jamun', description: 'Deep-fried milk dumplings in sugar syrup', price: 150, category: 'Desserts', preparationTime: 10, available: true, tags: ['sweet'] },
-  { id: '5', name: 'Masala Dosa', description: 'Crispy crepe with spiced potato filling', price: 180, category: 'Main Course', preparationTime: 20, available: true, tags: ['veg'] },
-  { id: '6', name: 'Mango Lassi', description: 'Sweet yogurt drink with mango', price: 120, category: 'Beverages', preparationTime: 5, available: true, tags: ['drink'] },
-  { id: '7', name: 'Tandoori Chicken', description: 'Clay oven roasted chicken', price: 350, category: 'Starters', preparationTime: 20, available: true, tags: ['non-veg'] },
-  { id: '8', name: 'Rasmalai', description: 'Soft cheese patties in sweetened milk', price: 160, category: 'Desserts', preparationTime: 10, available: false, tags: ['sweet'] },
-  { id: '9', name: 'Chef Special Thali', description: 'Complete meal with 7 dishes', price: 450, category: 'Specials', preparationTime: 35, available: true, tags: ['special'] },
-  { id: '10', name: 'Fresh Lime Soda', description: 'Refreshing lime drink', price: 80, category: 'Beverages', preparationTime: 5, available: true, tags: ['drink'] },
+  { id: '1', name: 'Butter Chicken', description: 'Creamy tomato-based curry with tender chicken', price: 300, category: 'Main Course', preparationTime: 25, available: true, image: '/menu/butter-chicken.png', tags: ['popular', 'non-veg'] },
+  { id: '2', name: 'Paneer Tikka', description: 'Grilled cottage cheese with spices', price: 200, category: 'Starters', preparationTime: 15, available: true, image: '/menu/paneer-tikka.png', tags: ['popular', 'veg'] },
+  { id: '3', name: 'Chicken Biryani', description: 'Fragrant basmati rice with spiced chicken', price: 280, category: 'Main Course', preparationTime: 30, available: true, image: '/menu/chicken-biryani.png', tags: ['popular', 'non-veg'] },
+  { id: '4', name: 'Gulab Jamun', description: 'Deep-fried milk dumplings in sugar syrup', price: 150, category: 'Desserts', preparationTime: 10, available: true, image: '/menu/gulab-jamun.png', tags: ['sweet'] },
+  { id: '5', name: 'Masala Dosa', description: 'Crispy crepe with spiced potato filling', price: 180, category: 'Main Course', preparationTime: 20, available: true, image: '/menu/dal-makhani.png', tags: ['veg'] },
+  { id: '6', name: 'Mango Lassi', description: 'Sweet yogurt drink with mango', price: 120, category: 'Beverages', preparationTime: 5, available: true, image: '/menu/mango-lassi.png', tags: ['drink'] },
+  { id: '7', name: 'Tandoori Chicken', description: 'Clay oven roasted chicken', price: 350, category: 'Starters', preparationTime: 20, available: true, image: '/menu/paneer-butter-masala.png', tags: ['non-veg'] },
+  { id: '8', name: 'Rasmalai', description: 'Soft cheese patties in sweetened milk', price: 160, category: 'Desserts', preparationTime: 10, available: false, image: '/menu/mango-kulfi.png', tags: ['sweet'] },
+  { id: '9', name: 'Chef Special Thali', description: 'Complete meal with 7 dishes', price: 450, category: 'Specials', preparationTime: 35, available: true, image: '/menu/chef-special-thali.png', tags: ['special'] },
+  { id: '10', name: 'Fresh Lime Soda', description: 'Refreshing lime drink', price: 80, category: 'Beverages', preparationTime: 5, available: true, image: '/menu/fresh-lime-soda.png', tags: ['drink'] },
 ];
 
 /** Normalize a single backend menu-item document into the frontend MenuItem shape */
