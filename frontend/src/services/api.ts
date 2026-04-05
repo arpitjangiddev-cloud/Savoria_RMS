@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || '/api' });
+const PROD_API = 'https://savoria-rms.onrender.com/api';
+const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || PROD_API });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
